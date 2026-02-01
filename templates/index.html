@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blockchain Voting</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <h2>🗳️ Blockchain Voting System</h2>
+    <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/admin">Admin</a>
+    </div>
+</div>
+
+<!-- VOTING CARD -->
+<div class="main-container">
+    <div class="vote-card">
+        <h3>Cast Your Vote</h3>
+        <p class="subtitle">Secure • Transparent • One Person One Vote</p>
+
+        {% if message %}
+            <div class="message">
+                {{ message }}
+            </div>
+        {% endif %}
+
+        <form action="/vote" method="POST">
+            <label>Voter ID</label>
+            <input type="text" name="voter_id" placeholder="Enter your Voter ID" required>
+
+            <label>Select Candidate</label>
+            <select name="candidate" required>
+                <option value="">-- Choose Candidate --</option>
+                {% for c in candidates %}
+                    <option value="{{ c[0] }}">{{ c[0] }}</option>
+                {% endfor %}
+            </select>
+
+            <button type="submit">Submit Vote</button>
+        </form>
+    </div>
+</div>
+
+<footer>
+    <p>© 2026 Blockchain Voting System</p>
+</footer>
+
+</body>
+</html>
