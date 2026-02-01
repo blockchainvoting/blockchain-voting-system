@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Candidate</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='register.css') }}">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <h2>Admin Panel</h2>
+    <a href="/dashboard">Back to Dashboard</a>
+</div>
+
+<!-- FORM CONTAINER -->
+<div class="form-wrapper">
+    <div class="form-card">
+        <h2>Register New Candidate</h2>
+
+        <form method="POST">
+            <label>Candidate Name</label>
+            <input type="text" name="name" placeholder="Enter candidate name" required>
+
+            <label>Party Name</label>
+            <input type="text" name="party" placeholder="Enter party name" required>
+
+            <button type="submit">Add Candidate</button>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

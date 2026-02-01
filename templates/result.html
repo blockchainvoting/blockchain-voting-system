@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Election Results | Blockchain Voting</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='result.css') }}">
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+    <h2>🗳️ Election Results</h2>
+    <a href="/dashboard" class="back-btn">Dashboard</a>
+</div>
+
+<!-- RESULTS -->
+<div class="result-container">
+    <div class="result-box">
+        {% if results %}
+        <table>
+            <tr>
+                <th>Candidate</th>
+                <th>Votes</th>
+            </tr>
+            {% for candidate, count in results.items() %}
+            <tr>
+                <td>{{ candidate }}</td>
+                <td>{{ count }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% else %}
+        <p class="no-data">No votes recorded yet.</p>
+        {% endif %}
+    </div>
+</div>
+
+</body>
+</html>

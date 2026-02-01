@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login | Blockchain Voting</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='adminlogin.css') }}">
+</head>
+<body>
+
+<div class="login-wrapper">
+    <div class="login-box">
+        <h2>Admin Login</h2>
+        <p>Authorized Access Only</p>
+
+        <form method="post">
+            <input type="text" name="username" placeholder="Admin Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
+
+        <!-- FIXED CHANGE PASSWORD LINK -->
+        <a href="/change_password"
+           style="display:block;margin-top:15px;font-weight:bold;color:#4f46e5;">
+            🔑 Change Password
+        </a>
+    </div>
+</div>
+
+</body>
+</html>
